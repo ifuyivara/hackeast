@@ -1,0 +1,24 @@
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/EastAustin.ap_ \
+ : /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/drawable/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/drawable-hdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/drawable-ldpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/drawable-mdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/values/strings.xml \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/res/xml/config.xml \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/res/drawable/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/res/drawable-hdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/res/drawable-ldpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/res/drawable-mdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/res/drawable-xhdpi/icon.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/cordova.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/cordova_plugins.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/img \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/index.html \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css/index.css \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/img/logo.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/index.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/AndroidManifest.xml \
