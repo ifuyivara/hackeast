@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>EAST Austin</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>EAST Austin</h1>
-        </div>
-		<button onclick="capturePhoto();">Capture Photo</button> <br>
-		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Select From Photo Library</button><br>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-			<script type="text/javascript" charset="utf-8">
+  <head>
+    <title>EAST Austin</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" type="text/css" charset="utf-8" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" charset="utf-8" />
+	<script src="http://localhost:8080/target/target-script-min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.0.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.extensions.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/maps.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+  </head>
+  <body>
+	<div data-role="page" id="home-map">
+	  <div data-role="header" data-position="fixed">
+	    <h1>EAST: Home</h1>
+	  </div>
 
-			    var pictureSource;
-			    var destinationType; 
-			    document.addEventListener("deviceready",onDeviceReady,false);
+	  <div data-role="content">
+	  	<div id="map_canvas" style="width:100%"></div>
+	  </div>
+	
+	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" data-icon="home">My Location</a></li>
+				<li><a id="button-browse" href="#" data-icon="grid">Browse</a></li>
+				<li><a href="#" data-icon="gear">Filter</a></li>
+			</ul>
+		</div>
+	  </div>
+	
+	</div>
+	
+	<div data-role="page" id="home-browse">
+	  <div data-role="header" data-position="fixed">
+	    <h1>EAST: Browse</h1>
+	  </div>
 
-			    function onDeviceReady() {
-			        pictureSource=navigator.camera.PictureSourceType;
-			        destinationType=navigator.camera.DestinationType;
-			    }
+	  <div data-role="content">
+		
+		<div id="columns">
+		  <art>
+		  <img src="http://www.booooooom.com/wp-content/uploads/2012/02/artafterdark-4.jpg">
+			<artdetail>Some detail about this art or artist. All elements should use this design</artdetail>
+			</art>
 
-			    function onPhotoDataSuccess(imageData) {
-			      
-			    }
+			<art>
+			<img src="http://shedsenn.files.wordpress.com/2012/06/sucha-lefty-brain-art.jpg">
+			<artdetail>This could be an artist</artdetail>
+			</art>
 
-			    // Called when a photo is successfully retrieved
-			    //
-			    function onPhotoURISuccess(imageURI) {
-			      
-			    }
+		  <art>
+			<img src="https://pbs.twimg.com/profile_images/375276307/art1-small-square.jpg">
+			<artdetail>this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text</artdetail>
+			</art>
 
-			    // A button will call this function
-			    //
-			    function capturePhoto() {
-			      // Take picture using device camera and retrieve image as base64-encoded string
-			      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-			        destinationType: destinationType.DATA_URL });
-			    }
+			<art>
+			<img src="http://images.huffingtonpost.com/2012-08-30-PicBanksyStreetArtAtSundance.png">
+			<artdetail>Some short description</artdetail>
+			</art>
 
-			    // A button will call this function
-			    //
-			    function getPhoto(source) {
-			      // Retrieve image file location from specified source
-			      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-			        destinationType: destinationType.FILE_URI,
-			        sourceType: source });
-			    }
+		   <art>
+			 <img src="http://fineartamerica.com/images-simple-print/images-medium/original-modern-abstract-contemporary-guitar-art-painting-darlene-keeffe.jpg">
+			<artdetail>this could be a lot of text, more and more textthis could be a lot of text, more and more text</artdetail>
+			</art>
 
-			    // Called if something bad happens.
-			    //
-			    function onFail(message) {
-			      alert('Failed because: ' + message);
-			    }
+		   <art>
+			 <img src="http://www.forestwildlifeart.com/dogs-wildlife-art-red-fox-oil-painting-sun-fox-copyright.jpg">
+			<artdetail>this could be a lot of text, more and more text</artdetail>
+			</art>
 
-			    </script>
-        </script>
-    </body>
+			<art>
+			<img src="http://fineartamerica.com/images-simple-print/images-medium-5/abstract-landscape-art-original-tree-and-moon-painting-desert-dreams-by-madart-megan-duncanson.jpg">
+			<artdetail>this could be a lot of text, more and more text</artdetail>
+			</art>	
+
+		   <art>
+			<img src="http://2.imimg.com/data2/EU/RI/MY-2147836/art-paintings-500x500-500x500.jpg">
+			<artdetail>this could be a lot of text, more and more textthis could be a lot of text, more and more textthis could be a lot of text, more and more text</artdetail>
+			</art>
+
+		    <art>
+			<img src="http://31.media.tumblr.com/ea544996162fc37c02cb072cd3cccae5/tumblr_n0cfp49urj1r215qmo1_500.jpg">
+		    <artdetail>this could be a lot of text, more and more text</artdetail>
+			</art>	
+		  
+			</div>
+		
+
+	  </div>
+	
+	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" data-icon="home">My Location</a></li>
+				<li><a id="button-map" href="#" data-icon="grid">Map</a></li>
+				<li><a href="#" data-icon="gear">Filter</a></li>
+			</ul>
+		</div>
+	  </div>
+	
+	</div>
+	
+  </body>
 </html>

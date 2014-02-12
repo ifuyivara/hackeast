@@ -6,4 +6,7 @@
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/com/secondoffice/east/R$string.class \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/com/secondoffice/east/R$xml.class \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/com/secondoffice/east/R.class \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/org/apache/cordova/camera/CameraLauncher.class \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/org/apache/cordova/camera/ExifHelper.class \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/classes/org/apache/cordova/camera/FileHelper.class \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/dexedLibs/classes-92b57ad406b7f3b28675da7b79c4bb7e.jar \

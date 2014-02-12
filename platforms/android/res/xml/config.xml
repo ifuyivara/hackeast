@@ -1,20 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.secondoffice.east" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Hello Cordova</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
     <preference name="loglevel" value="DEBUG" />
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
     <name>EastAustin</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Application for the EAST Austin hackathon.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="ifuyivara@gmail.com" href="http://cordova.io">
+        SecondOffice Team
     </author>
     <content src="index.html" />
     <access origin="*" />
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+        <param name="ios-package" value="CDVCamera" />
     </feature>
+    <plugin name="Geolocation" value="CDVLocation" />
 </widget>

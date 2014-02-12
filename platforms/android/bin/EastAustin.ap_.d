@@ -16,9 +16,26 @@
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/cordova_plugins.js \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/img \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/index copy.html \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/index.html \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css/index.css \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css/jquery.mobile-1.4.0.min.css \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css/main.css \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/img/logo.png \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/artist.js \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/index.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/jquery-2.1.0.min.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/jquery.mobile-1.4.0.min.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/jquery.ui.map.extensions.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/jquery.ui.map.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/main.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/js/maps.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/bin/AndroidManifest.xml \
