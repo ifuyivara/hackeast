@@ -18,6 +18,11 @@
 	<div data-role="page" id="home-map">
 	  <div data-role="header" data-position="fixed">
 	    <h1>EAST: Home</h1>
+		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		<a href="#" id="filter-map-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
+	  </div>
+	  <div data-role="panel" id="filter-map-panel" data-position="right" data-display="overlay">
+
 	  </div>
 
 	  <div data-role="content">
@@ -27,9 +32,9 @@
 	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#" data-icon="home">My Location</a></li>
-				<li><a id="button-browse" href="#" data-icon="grid">Browse</a></li>
-				<li><a href="#" data-icon="gear">Filter</a></li>
+				<li><a id="button-map" class="ui-btn-active ui-state-persist" href="#home-map" data-icon="home">My Location</a></li>
+				<li><a id="button-browse" href="#home-browse" data-icon="grid">Browse</a></li>
+				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
 			</ul>
 		</div>
 	  </div>
@@ -39,54 +44,87 @@
 	<div data-role="page" id="home-browse">
 	  <div data-role="header" data-position="fixed">
 	    <h1>EAST: Browse</h1>
+		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		<a href="#" id="filter-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
+	  </div>
+	
+	  <div data-role="panel" id="filter-panel" data-position="right" data-display="overlay">
+	        
 	  </div>
 
 	  <div data-role="content">
 		
 		<div id="columns">
-		  <art>
+		  <art data-type="venue">
 		  <img src="http://www.booooooom.com/wp-content/uploads/2012/02/artafterdark-4.jpg">
-			<artdetail>Some detail about this art or artist. All elements should use this design</artdetail>
+			<artdetail data-type="venue">
+				<a href="#" data-venue-id="1">Venue 1</a>
+				Some detail about this art or artist. All elements should use this design
+			</artdetail>
 			</art>
 
-			<art>
+			<art data-type="venue">
 			<img src="http://shedsenn.files.wordpress.com/2012/06/sucha-lefty-brain-art.jpg">
-			<artdetail>This could be an artist</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="2">Venue 2</a>
+				This could be an artist
+			</artdetail>
 			</art>
 
-		  <art>
+		  <art data-type="venue">
 			<img src="https://pbs.twimg.com/profile_images/375276307/art1-small-square.jpg">
-			<artdetail>this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="3">Venue 3</a>
+				this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text
+			</artdetail>
 			</art>
 
-			<art>
+			<art data-type="venue">
 			<img src="http://images.huffingtonpost.com/2012-08-30-PicBanksyStreetArtAtSundance.png">
-			<artdetail>Some short description</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="4">Venue 4</a>
+				Some short description
+			</artdetail>
 			</art>
 
-		   <art>
+		   <art data-type="venue">
 			 <img src="http://fineartamerica.com/images-simple-print/images-medium/original-modern-abstract-contemporary-guitar-art-painting-darlene-keeffe.jpg">
-			<artdetail>this could be a lot of text, more and more textthis could be a lot of text, more and more text</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="5">Venue 5</a>
+				this could be a lot of text, more and more textthis could be a lot of text, more and more text
+			</artdetail>
 			</art>
 
-		   <art>
+		   <art data-type="venue">
 			 <img src="http://www.forestwildlifeart.com/dogs-wildlife-art-red-fox-oil-painting-sun-fox-copyright.jpg">
-			<artdetail>this could be a lot of text, more and more text</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="6">Venue 6</a>
+				this could be a lot of text, more and more text
+			</artdetail>
 			</art>
 
-			<art>
+			<art data-type="venue">
 			<img src="http://fineartamerica.com/images-simple-print/images-medium-5/abstract-landscape-art-original-tree-and-moon-painting-desert-dreams-by-madart-megan-duncanson.jpg">
-			<artdetail>this could be a lot of text, more and more text</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="7">Venue 7</a>
+				this could be a lot of text, more and more text
+			</artdetail>
 			</art>	
 
-		   <art>
+		   <art data-type="venue">
 			<img src="http://2.imimg.com/data2/EU/RI/MY-2147836/art-paintings-500x500-500x500.jpg">
-			<artdetail>this could be a lot of text, more and more textthis could be a lot of text, more and more textthis could be a lot of text, more and more text</artdetail>
+			<artdetail>
+				<a href="#" data-venue-id="8">Venue 8</a>
+				this could be a lot of text, more and more textthis could be a lot of text, more and more textthis could be a lot of text, more and more text
+			</artdetail>
 			</art>
 
-		    <art>
+		    <art data-type="venue">
 			<img src="http://31.media.tumblr.com/ea544996162fc37c02cb072cd3cccae5/tumblr_n0cfp49urj1r215qmo1_500.jpg">
-		    <artdetail>this could be a lot of text, more and more text</artdetail>
+		    <artdetail>
+				<a href="#" data-venue-id="9">Venue 9</a>
+				this could be a lot of text, more and more text
+			</artdetail>
 			</art>	
 		  
 			</div>
@@ -97,9 +135,9 @@
 	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#" data-icon="home">My Location</a></li>
-				<li><a id="button-map" href="#" data-icon="grid">Map</a></li>
-				<li><a href="#" data-icon="gear">Filter</a></li>
+				<li><a id="button-map" href="#home-map" data-icon="home">My Location</a></li>
+				<li><a id="button-browse" class="ui-btn-active ui-state-persist" href="#home-browse" data-icon="grid">Browse</a></li>
+				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
 			</ul>
 		</div>
 	  </div>

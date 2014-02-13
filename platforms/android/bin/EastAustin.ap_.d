@@ -15,6 +15,7 @@
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/cordova.js \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/cordova_plugins.js \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/css \
+/Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/detail-browse.html \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/img \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/index copy.html \
 /Users/ivanfuyivara/Documents/htdocs/hackathon/east/platforms/android/assets/www/index.html \
