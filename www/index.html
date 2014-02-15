@@ -23,12 +23,32 @@
 	<div data-role="page" id="home-browse">
 	  <div data-role="header" data-position="fixed">
 	    <h1>EAST: Browse</h1>
-		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		<input type="search" name="search-mini" id="search-mini" value="" placeholder="Search venue by name..." data-mini="true" />
 		<a href="#" id="filter-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
 	  </div>
 
 	  <div data-role="panel" id="filter-panel" data-position="right" data-display="overlay">
-
+		<div id="venue-filters">
+			<fieldset data-role="controlgroup">
+			    <input name="ad_1" id="ad_1" type="checkbox">
+			    <label for="ad_1">Official parking for the disabled</label>
+				<input name="ad_2" id="ad_2" type="checkbox">
+			    <label for="ad_2">Minimum 3" doorway clearance space</label>
+				<input name="ad_3" id="ad_3" type="checkbox">
+			    <label for="ad_3">Entry way without stairs, no lip & with a ramp</label>
+				<input name="ad_4" id="ad_4" type="checkbox">
+			    <label for="ad_4">Path around studio with minimum 36" width</label>
+				<input name="ad_5" id="ad_5" type="checkbox">
+			    <label for="ad_5">Entry way with minimum 36" wide clearance space</label>
+				<input name="ad_6" id="ad_6" type="checkbox">
+			    <label for="ad_6">Minimum 56x60 inch clearance space for toilet</label>
+				<input name="ad_7" id="ad_7" type="checkbox">
+			    <label for="ad_7">Grab bars</label>
+				<input name="ad_8" id="ad_8" type="checkbox">
+			    <label for="ad_8">Braille or raised letter signage</label>
+			</fieldset>
+			<button data-theme="a" id="submit" type="submit" class="ui-btn-hidden" aria-disabled="false">Filter</button>
+		</div>
 	  </div>
 
 	  <div data-role="content">
@@ -43,7 +63,7 @@
 			<ul>
 				<li><a id="button-map" href="#home-map" data-icon="home">My Location</a></li>
 				<li><a id="button-browse" class="ui-btn-active ui-state-persist" href="#home-browse" data-icon="grid">Browse</a></li>
-				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
+				<li><a id="button-scan" href="#" data-icon="gear">Scan</a></li>
 			</ul>
 		</div>
 	  </div>
@@ -53,11 +73,31 @@
 	<div data-role="page" id="home-map">
 	  <div data-role="header" data-position="fixed">
 	    <h1>EAST: Home</h1>
-		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		<input type="search" name="search-mini" id="search-mini" value="" placeholder="Search venue by name..." data-mini="true" />
 		<a href="#" id="filter-map-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
 	  </div>
 	  <div data-role="panel" id="filter-map-panel" data-position="right" data-display="overlay">
-
+		<div id="venue-filters">
+			<fieldset data-role="controlgroup">
+			    <input name="ad_1" id="ad_1" checked="" type="checkbox">
+			    <label for="ad_1">Official parking for the disabled</label>
+				<input name="ad_2" id="ad_2" checked="" type="checkbox">
+			    <label for="ad_2">Minimum 3" doorway clearance space</label>
+				<input name="ad_3" id="ad_3" checked="" type="checkbox">
+			    <label for="ad_3">Entry way without stairs, no lip & with a ramp</label>
+				<input name="ad_4" id="ad_4" checked="" type="checkbox">
+			    <label for="ad_4">Path around studio with minimum 36" width</label>
+				<input name="ad_5" id="ad_5" checked="" type="checkbox">
+			    <label for="ad_5">Entry way with minimum 36" wide clearance space</label>
+				<input name="ad_6" id="ad_6" checked="" type="checkbox">
+			    <label for="ad_6">Minimum 56x60 inch clearance space for toilet</label>
+				<input name="ad_7" id="ad_7" checked="" type="checkbox">
+			    <label for="ad_7">Grab bars</label>
+				<input name="ad_8" id="ad_8" checked="" type="checkbox">
+			    <label for="ad_8">Braille or raised letter signage</label>
+			</fieldset>
+			<button data-theme="a" id="submit" type="submit" class="ui-btn-hidden" aria-disabled="false">Filter</button>
+		</div>
 	  </div>
 
 	  <div data-role="content">
@@ -69,7 +109,7 @@
 			<ul>
 				<li><a id="button-map" class="ui-btn-active ui-state-persist" href="#home-map" data-icon="home">My Location</a></li>
 				<li><a id="button-browse" href="#home-browse" data-icon="grid">Browse</a></li>
-				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
+				<li><a id="button-scan" href="#" data-icon="gear">Scan</a></li>
 			</ul>
 		</div>
 	  </div>

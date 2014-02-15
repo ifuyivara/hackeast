@@ -8,7 +8,7 @@
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
   </head>
   <body>
-	<div data-role="page" id="artist" data-add-back-btn="true" data-back-btn-text="Back">
+	<div data-role="page" id="upload-art-form" data-add-back-btn="true" data-back-btn-text="Back">
 	  <script src="js/upload.js"></script>
 	  <div data-role="header">
 		<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
@@ -19,7 +19,6 @@
 	   <h1>Artist: Capture a photo or select.</h1>
 		<p>To start please capture a photo of your art or select a photo from your device:</p>
     	<button class="ui-btn ui-shadow" onclick="capturePhoto();">Capture Photo</button> <br>
-    	<button class="ui-btn ui-shadow" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
 		<form data-ajax="true" action="https://api.com" method="post">
 			<div id="art-img"></div>
 			<label>Title</label>

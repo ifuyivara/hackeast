@@ -18,7 +18,7 @@ function checkArtistPermission(){
 }
 
 function resetLoginButton(){
-	if (checkArtistPermission){
+	if (checkArtistPermission()){
 		$("#artist-logged-button").show();
 		$("#artist-login-ask").hide();
 	} else {
@@ -94,53 +94,99 @@ $(document).on("pageinit", "#venue-browse",function(){
 *
 */
 $(document).on("pageinit", "#home-browse",function(){
-		// get all the venues
-		$.ajax({url: apiURL+'/venues',
-			type: 'get',
-			async: 'true',
-			dataType: 'json',
-			contentType: "application/json; charset=utf-8",
-			beforeSend: function() {
-				$(".ui-page").addClass('ui-disabled');
-				$.mobile.loading( 'show', {
-					text: 'Loading...',
-					textVisible: true,
-					theme: 'b'
-				});
-			},
-			complete: function() {
-				$(".ui-page").removeClass('ui-disabled');
-				$.mobile.loading('hide');
-			},
-			success: function (result) {
-				if(result) {
-					result.forEach(function(i){
-						$("#home-browse .columns").append('<art data-venue-id="'+i.id+'" data-type="venue"> \
-						<img src="'+i.picture+'"> \
-					    <artdetail> \
-							<a href="#" >'+i.name+'</a> \
-							'+i.description+' \
-						</artdetail> \
-						</art>');
-					});
-					
-					$("#home-browse art").on('tap', function(event){
-						// push venue page with venue id
-						$.mobile.navigate( "venue.html?vid="+$(this).data('venue-id'), {transition: 'slide'});
-						event.preventDefault();
-						return false;
-					});
-				} else {
-					alert('There was a problem accessing the API.');
-				}
-			},
-			error: function(xhr, status, error) {
-				console.log(xhr);
-			}
-			
+		// first get all the venues
+		getVenuesBrowse(false);
+		
+		// venues filter/search
+		$('#venue-filters #submit').on('click', function(i){
+			var query = "";
+			$("#venue-filters label.ui-checkbox-on").each(function(i, elem){
+				query = query+$(elem).attr("for")+"=true&";
+			});
+			$( "#filter-panel, #filter-map-panel").panel( "close");
+			getVenuesBrowse(query);
+			i.preventDefault();
+			return false;
+		});
+
+		$("#search-mini").bind( "change", function(event, ui) {
+		  	var name = $(this).val();
+			var query = "name="+name;
+			getVenuesBrowse(query);
 		});
 		
+		// setup the scan button. May be not the best place to putthis
+		$("#button-scan").on('click', function(i){
+			cordova.plugins.barcodeScanner.scan(
+			      function (result) {
+					if (!result.cancelled){
+						alert("We got a barcode\n" +
+				                "Result: " + result.text + "\n" +
+				                "Format: " + result.format + "\n" +
+				                "Cancelled: " + result.cancelled);	
+					}
+			      }, 
+			      function (error) {
+			          alert("Scanning failed: " + error);
+			      }
+			   );
+		});
 });
+
+function getVenuesBrowse(query){
+	
+	// get venues
+	if (query){
+		var q = '/venues?'+query;
+	} else {
+		var q = '/venues';
+	}
+	
+	$.ajax({url: apiURL+q,
+		type: 'get',
+		async: 'true',
+		dataType: 'json',
+		contentType: "application/json; charset=utf-8",
+		beforeSend: function() {
+			$(".ui-page").addClass('ui-disabled');
+			$.mobile.loading( 'show', {
+				text: 'Loading...',
+				textVisible: true,
+				theme: 'b'
+			});
+		},
+		complete: function() {
+			$(".ui-page").removeClass('ui-disabled');
+			$.mobile.loading('hide');
+		},
+		success: function (result) {
+			if(result) {
+				result.forEach(function(i){
+					$("#home-browse .columns").append('<art data-venue-id="'+i.id+'" data-type="venue"> \
+					<img src="'+i.picture+'"> \
+				    <artdetail> \
+						<a href="#" >'+i.name+'</a> \
+						'+i.description+' \
+					</artdetail> \
+					</art>');
+				});
+				
+				$("#home-browse art").on('tap', function(event){
+					// push venue page with venue id
+					$.mobile.navigate( "venue.html?vid="+$(this).data('venue-id'), {transition: 'slide'});
+					event.preventDefault();
+					return false;
+				});
+			} else {
+				alert('There was a problem accessing the API.');
+			}
+		},
+		error: function(xhr, status, error) {
+			console.log(xhr);
+		}
+		
+	});
+}
 
 /**
 * Setup art page
@@ -261,7 +307,7 @@ function getArtist(art){
 				$('.year span', arthtml).html(art.year);
 				$('.sold_out span', arthtml).html(art.sold_out);
 				$('.buyurl', arthtml).html('<a href="'+art.buyURL+'" >buy</a>');
-				
+				$('#share-this', arthtml).attr('onclick', "window.plugins.socialsharing.share('Check out this awesome art!', null, '"+art.thumbnail+"', '"+art.buyURL+"')");
 			} else {
 				alert('There was a problem accessing the API.');
 			}
@@ -302,7 +348,7 @@ $(document).on("pageinit",function(){
 	});
 	
 	
-	$("#submit").on('tap', function(i) { // catch the form's submit event
+	$("#login-panel #submit").on('tap', function(i) { // catch the form's submit event
 		i.preventDefault();
 		if($('#username').val().length > 0 && $('#password').val().length > 0){
 			$.ajax({url: 'http://www.swtor.com',
@@ -342,8 +388,13 @@ $(document).on("pageinit",function(){
 		return false; // cancel original event to prevent form submitting
 	});
 	
-	$("#artist-logged-button").on('tap', function(i){
+	$("#artist-logged-button #upload").on('tap', function(i){
 		$.mobile.changePage("upload-form.html?venue=1");
+	});
+	
+	$("#artist-logged-button #logout").on('tap', function(i){
+		localStorage.removeItem("session");
+		resetLoginButton();
 	});
 	
 	resetLoginButton();
