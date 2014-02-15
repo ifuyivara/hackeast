@@ -1,40 +1,76 @@
 
 .columns {
-  -webkit-column-count: 2;
+    -webkit-column-count: 2;
     -webkit-column-gap: 10px;
     -webkit-column-fill: auto;
     -moz-column-count: 2;
     -moz-column-gap: 10px;
     column-count: 2;
-    column-gap: 10px;
+    column-gap: 0.5em;
     column-fill: auto;
 }
 
-art {
+.item {
 	background: #fefefe;
-	border: 2px solid #fcfcfc;
+	border-radius:5px;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 	margin: 0 2px 15px;
-	padding: 15px;
-	padding-bottom: 10px;
 	transition: opacity .4s ease-in-out;
   	display: inline-block;
+  	overflow:hidden;
   	column-break-inside: avoid;
 }
 
-art img {
-	width: 100%; height: auto;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 15px;
-	margin-bottom: 5px;
+.item img {
+	width: 100%;
+	height: auto;
+
 }
 
-art artdetail {
+.item .detail {
+    display:block;
+    padding:0.5em;
+    width:100%;
+    box-sizing:border-box;
   	font-size: .9rem;
 	color: #444;
   	line-height: 1.5;
+  	border-bottom:solid 1px #ccc;
+}
+
+.item .detail:last-child { border:none; }
+
+.item .detail .title {
+    font-size:13px;
+    line-height:17px;
+    color: #333333;
+}
+
+.item .detail.other {
+    line-height:15px;
+    font-size:12px;
+}
+
+.detail .artist-name {
+    color: #717171;
+}
+
+.detail .medium {
+    color: #b7b7b7;
+}
+
+.single-art.ui-listview {
+    margin:0;
 }
 
 img.up-art-img{
 	width:100%;
+}
+
+#app-header {
+    background-color:#fff;
+}
+
+.ui-content {
+    padding: 0.5em;
 }

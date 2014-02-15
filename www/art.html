@@ -6,34 +6,40 @@
   <body>
 	<div data-role="page" id="single-art">
 		
-	  <div data-role="header" data-position="fixed">
+	  <div id="app-header" data-role="header" data-position="fixed">
 		<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
 	    <h1>EAST: Single Art</h1>
 	  </div>
 
 	  <div id="art-scroll" data-iscroll="" data-role="content" class="iscroll-wrapper">
-		<div class="single-art" data-role="listview">
+        <div data-role="content">
+		    <div class="single-art item" data-role="listview">
 			
 				<art data-art-id="0" data-artist-id="0"> 
-				<img src="/" class="up-art-img"> 
-			    <artdetail> 
-					<div class="title"></div>
-					<div class="artist-name">by <a href="#" ></a></div>
-					<div class="description"></div>
-					<div class="medium">Medium: <span></span></div>
-					<div class="size">Size: <span></span></div>
-					<div class="year">Year <span></span></div>
-					<div class="sold_out">Available: <span></span></div>
-					<div class="buyurl">Buy: <span></span></div>
+                    <img src="/" class="up-art-img">
+                    <artdetail class="detail">
+                        <div class="title"></div>
+                    </artdetail>
+                     <artdetail class="detail artist">
+                        <a href="#" class="btn artist-name"></a>
+                     </artdetail>
+                     <artdetail class="detail other">
+                        <div class="description"></div>
+                        <div class="medium">Medium: <span></span></div>
+                        <div class="size">Size: <span></span></div>
+                        <div class="year">Year <span></span></div>
+                    </artdetail>
+                    <artdetail class="detail cta">
+                        <div class="availability"></div>
+                    </artdetail>
 					<button id="share-this" onclick="">Share this</button>
-				</artdetail> 
 				</art>
 				
 				<div id="more-art">
 					<div class="columns"></div>
 				</div>	
+		    </div>
 		</div>
-		
 		<div class="iscroll-pullup">
 		   <span class="iscroll-pull-icon"></span>
 		   <span data-iscroll-pulled-text="Pull up to load more from this artist!"
