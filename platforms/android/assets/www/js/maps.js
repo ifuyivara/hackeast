@@ -11,40 +11,60 @@ function getRealContentHeight() {
     return content_height;
 }
 
-$(function() {
+$(document).on("pageshow", "#home-map",function(){
 	$(".ui-content").css('padding', 0);
 	$("#map_canvas").css('height', getRealContentHeight());
-	$("#map_canvas").gmap({'center': "30.274559,-97.736836", 'zoom': 15, 'disableDefaultUI':true, 'callback': function() {
-		var self = this;
-		self.addMarker({'position': this.get('map').getCenter() }).click(function() {
-			self.openInfoWindow({ 'content': 'Hello World!' }, this);
-		});	
-	}});
+	$("#map_canvas").gmap({'center': "30.274559,-97.736836", 'zoom': 15, 'disableDefaultUI':true});
 	
 	$('#map_canvas').gmap().bind('init', function(evt, map) {
+		// get all the venues
+		$.ajax({url: apiURL+'/venues',
+			type: 'get',
+			async: 'true',
+			dataType: 'json',
+			contentType: "application/json; charset=utf-8",
+			beforeSend: function() {
+				$(".ui-page").addClass('ui-disabled');
+				$.mobile.loading( 'show', {
+					text: 'Loading...',
+					textVisible: true,
+					theme: 'b'
+				});
+			},
+			complete: function() {
+				$(".ui-page").removeClass('ui-disabled');
+				$.mobile.loading('hide');
+			},
+			success: function (result) {
+				if(result) {	
+					result.forEach(function(i){
+						var marker = new google.maps.LatLng(i.coordinates[0], i.coordinates[1]);
+						$('#map_canvas').gmap('addMarker', {'position': marker, 'bounds': true}).click(function() {
+							var venue_info = '<img src="'+i.picture+'" width="40px" /><a href="venue.html?venue='+i.id+'" data-transition="slide">'+i.name+'</a><p>'+i.description+'</p>';
+							$('#map_canvas').gmap('openInfoWindow',{ 'content': venue_info }, this);
+						});
+					});
+				} else {
+					alert('There was a problem accessing the API.');
+				}
+			},
+			error: function(xhr, status, error) {
+				alert(xhr.status);
+			}
+			
+		});
+		
 		$('#map_canvas').gmap('getCurrentPosition', function(position, status) {
 			if ( status === 'OK' ) {
 				var clientPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-				
-				var testPositions = [ 
-				{ lat:'30.440519', lon:'-97.691158'}, 
-				{ lat:'30.440639', lon:'-97.695106'}, 
-				{ lat:'30.438882', lon:'-97.687853'}, 
-				{ lat:'30.441037', lon:'-97.689173'}
-				]
-				
 				$('#map_canvas').gmap('addMarker', {'position': clientPosition, 'bounds': true});
-				
-				testPositions.forEach(function(i){
-					var marker = new google.maps.LatLng(i.lat, i.lon);
-					$('#map_canvas').gmap('addMarker', {'position': marker, 'bounds': true});
-				});
-				
-				// use 'bounds': true when you populate the map with markers
-				//$('#map_canvas').gmap('get','map').setOptions({'center': clientPosition});
-				//$('#map_canvas').gmap('get','map').setOptions({'bounds': true});
 			}
 		});   
 	});
+});
+
+$(document).on("pageinit",function(){
+	
+	
 	
 });

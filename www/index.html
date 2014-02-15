@@ -4,17 +4,52 @@
     <title>EAST Austin</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css" type="text/css" charset="utf-8" />
 	<link rel="stylesheet" href="css/main.css" type="text/css" charset="utf-8" />
-	<script src="http://localhost:8080/target/target-script-min.js"></script>
+	<link rel="stylesheet" href="css/jquery.mobile.iscrollview.css"/>
+	<link rel="stylesheet" href="css/jquery.mobile.iscrollview-pull.css"/>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="js/jquery-2.1.0.min.js"></script>
 	<script src="js/jquery.mobile-1.4.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.extensions.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/maps.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile.iscrollview.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/maps.js"></script>
   </head>
   <body>
+	
+	
+	<div data-role="page" id="home-browse">
+	  <div data-role="header" data-position="fixed">
+	    <h1>EAST: Browse</h1>
+		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
+		<a href="#" id="filter-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
+	  </div>
+
+	  <div data-role="panel" id="filter-panel" data-position="right" data-display="overlay">
+
+	  </div>
+
+	  <div data-role="content">
+
+		<div class="columns">
+		</div>
+
+	  </div>
+
+	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
+		<div data-role="navbar">
+			<ul>
+				<li><a id="button-map" href="#home-map" data-icon="home">My Location</a></li>
+				<li><a id="button-browse" class="ui-btn-active ui-state-persist" href="#home-browse" data-icon="grid">Browse</a></li>
+				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
+			</ul>
+		</div>
+	  </div>
+
+	</div>
+	
 	<div data-role="page" id="home-map">
 	  <div data-role="header" data-position="fixed">
 	    <h1>EAST: Home</h1>
@@ -34,109 +69,6 @@
 			<ul>
 				<li><a id="button-map" class="ui-btn-active ui-state-persist" href="#home-map" data-icon="home">My Location</a></li>
 				<li><a id="button-browse" href="#home-browse" data-icon="grid">Browse</a></li>
-				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
-			</ul>
-		</div>
-	  </div>
-	
-	</div>
-	
-	<div data-role="page" id="home-browse">
-	  <div data-role="header" data-position="fixed">
-	    <h1>EAST: Browse</h1>
-		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
-		<a href="#" id="filter-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
-	  </div>
-	
-	  <div data-role="panel" id="filter-panel" data-position="right" data-display="overlay">
-	        
-	  </div>
-
-	  <div data-role="content">
-		
-		<div id="columns">
-		  <art data-type="venue">
-		  <img src="http://www.booooooom.com/wp-content/uploads/2012/02/artafterdark-4.jpg">
-			<artdetail data-type="venue">
-				<a href="#" data-venue-id="1">Venue 1</a>
-				Some detail about this art or artist. All elements should use this design
-			</artdetail>
-			</art>
-
-			<art data-type="venue">
-			<img src="http://shedsenn.files.wordpress.com/2012/06/sucha-lefty-brain-art.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="2">Venue 2</a>
-				This could be an artist
-			</artdetail>
-			</art>
-
-		  <art data-type="venue">
-			<img src="https://pbs.twimg.com/profile_images/375276307/art1-small-square.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="3">Venue 3</a>
-				this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text this could be a lot of text, more and more text
-			</artdetail>
-			</art>
-
-			<art data-type="venue">
-			<img src="http://images.huffingtonpost.com/2012-08-30-PicBanksyStreetArtAtSundance.png">
-			<artdetail>
-				<a href="#" data-venue-id="4">Venue 4</a>
-				Some short description
-			</artdetail>
-			</art>
-
-		   <art data-type="venue">
-			 <img src="http://fineartamerica.com/images-simple-print/images-medium/original-modern-abstract-contemporary-guitar-art-painting-darlene-keeffe.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="5">Venue 5</a>
-				this could be a lot of text, more and more textthis could be a lot of text, more and more text
-			</artdetail>
-			</art>
-
-		   <art data-type="venue">
-			 <img src="http://www.forestwildlifeart.com/dogs-wildlife-art-red-fox-oil-painting-sun-fox-copyright.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="6">Venue 6</a>
-				this could be a lot of text, more and more text
-			</artdetail>
-			</art>
-
-			<art data-type="venue">
-			<img src="http://fineartamerica.com/images-simple-print/images-medium-5/abstract-landscape-art-original-tree-and-moon-painting-desert-dreams-by-madart-megan-duncanson.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="7">Venue 7</a>
-				this could be a lot of text, more and more text
-			</artdetail>
-			</art>	
-
-		   <art data-type="venue">
-			<img src="http://2.imimg.com/data2/EU/RI/MY-2147836/art-paintings-500x500-500x500.jpg">
-			<artdetail>
-				<a href="#" data-venue-id="8">Venue 8</a>
-				this could be a lot of text, more and more textthis could be a lot of text, more and more textthis could be a lot of text, more and more text
-			</artdetail>
-			</art>
-
-		    <art data-type="venue">
-			<img src="http://31.media.tumblr.com/ea544996162fc37c02cb072cd3cccae5/tumblr_n0cfp49urj1r215qmo1_500.jpg">
-		    <artdetail>
-				<a href="#" data-venue-id="9">Venue 9</a>
-				this could be a lot of text, more and more text
-			</artdetail>
-			</art>	
-		  
-			</div>
-		
-
-	  </div>
-	
-	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
-		<div data-role="navbar">
-			<ul>
-				<li><a id="button-map" href="#home-map" data-icon="home">My Location</a></li>
-				<li><a id="button-browse" class="ui-btn-active ui-state-persist" href="#home-browse" data-icon="grid">Browse</a></li>
 				<li><a id="button-login" href="#" data-icon="gear">Log in</a></li>
 			</ul>
 		</div>
