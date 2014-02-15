@@ -12,7 +12,7 @@
 	<script src="js/jquery.mobile-1.4.0.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.ui.map.extensions.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/iscroll.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/jquery.mobile.iscrollview.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 	<script type="text/javascript" charset="utf-8" src="js/maps.js"></script>
@@ -21,9 +21,8 @@
 	
 	
 	<div data-role="page" id="home-browse">
-	  <div data-role="header" data-position="fixed">
+	  <div id="app-header" data-role="header" data-position="fixed">
 	    <h1>EAST: Browse</h1>
-		<input type="search" name="search-mini" id="search-mini" value="" data-mini="true" />
 		<a href="#" id="filter-button" data-role="button" class="ui-btn-right" data-icon="gear" >filter</a>
 	  </div>
 
@@ -32,10 +31,7 @@
 	  </div>
 
 	  <div data-role="content">
-
-		<div class="columns">
-		</div>
-
+		<div id="venues" class="list-view"></div>
 	  </div>
 
 	  <div data-position="fixed" data-tap-toggle="false" data-role="footer" data-id="east-1">
